@@ -3,8 +3,7 @@ from telegram import Bot
 import asyncio
 
 # 👇 توکن رباتت را بین این دو علامت قرار بده
-BOT_TOKEN = "
-8923053020:AAFWVwQ4Zh6OzWlGNWxt7b0eS0I3D8olP14"
+BOT_TOKEN = os.environ["BOT_TOKEN"]
 
 # 👇 آیدی کانال
 CHANNEL_ID = "@samanreyhane"
