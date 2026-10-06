@@ -2,18 +2,18 @@ name: Wedding Countdown
 
 on:
   schedule:
-    - cron: "30 4 * * *"
+    - cron: "0 18 * * *"
   workflow_dispatch:
 
 jobs:
-  send-countdown:
+  countdown:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Send countdown
+      - name: Run wedding countdown
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: python bot.py
